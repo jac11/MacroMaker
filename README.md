@@ -33,7 +33,7 @@
  * cd MacroMaker
  * chmod +x MacroMaker.py
  * to see the help list MacroMaker.py -h/--help
- ## Eexpalin :-
+ ## explain :-
 ----------------------------------------
  incace i need to download file and exctue after download i use powershaell  - 
  ```
