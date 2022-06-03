@@ -55,7 +55,7 @@ class  Maker_Code:
                    with open ("MacroStore/"+self.args.Name+".txt",'a') as Macro_File :
                             Micro_write = Macro_File.write("\tDim Hex As String\n"+f'{Do}'+'\n'+\
                                          '\tSet WshShell = CreateObject("Wscript.Shell")'+\
-                                           '\n\tWshShell.Run Hex, 1, True'+'\nEnd Sub')
+                                           '\n\tWshShell.Run Hex, 0, True'+'\nEnd Sub')
                                  
             else:
                 with open ("MacroStore/"+self.args.Name+".txt",'a') as Macro_File :  
