@@ -109,7 +109,7 @@ End Sub
 ```
 * output  will save in the MacroStore folder under the name  user give it - n <the name >
   
-<img src = "images/1.png" width=450>  <img src = "images/2.png" width=450>
+<img src = "images/1.png" width=350>  <img src = "images/2.png" width=350>
 -----------------------------------------------------------------
 
 - rootx1982@gmail.com
