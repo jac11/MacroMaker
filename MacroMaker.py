@@ -68,9 +68,9 @@ class  Maker_Code:
        def control(self):    
          parser = argparse.ArgumentParser(description="Usage: [OPtion] [arguments] [ -n ] [arguments]")       
          parser.add_argument( "-c","--Command",help ="PowerShell Command ") 
-         parser.add_argument( "-n","--Name"   ,help ="Name of the Macto")  
-         parser.add_argument( "-r","--read"   ,help ="Name of the Macto")
-         parser.add_argument( "--hex",action='store_true',help ="gentat the shell hex format")     
+         parser.add_argument( "-n","--Name"   ,help ="Name of the Macto output ")  
+         parser.add_argument( "-r","--read"   ,help ="read the command from file ")
+         parser.add_argument( "--hex",action='store_true',help ="generate the Macros in  hex format")     
          self.args = parser.parse_args()        
          if len(sys.argv)!=1 :
             pass
