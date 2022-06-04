@@ -113,7 +113,9 @@ End Sub
 -----------------------------------------------------------------
 ### video tutorial
 --------------------
-[![video tutorial](https://www.youtube.com/watch?v=B_i066ZqvPc)
+<p alian="center">	
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/B_i066ZqvPc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
 	
 - rootx1982@gmail.com
 -  thank you 
