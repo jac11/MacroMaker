@@ -67,7 +67,13 @@ class  Maker_Code:
                        Macro_read =  Macro_File.read()        
                 with open ("MacroStore/"+self.args.Name+".txt",'w') as Macro_File : 
                        Macro_read =  Macro_File.write(Option_Hidden+Macro_read )
-
+            if self.args.Mix:
+                with open(os.getcwd()+'/Macro_Mix','r') as readMix:
+                    readMix = readMix.read()
+                with open ("MacroStore/"+self.args.Name+".txt",'r') as Macro_File : 
+                       Macro_read =  Macro_File.read()    
+                with open ("MacroStore/"+self.args.Name+".txt",'w') as Macro_File : 
+                       Macro_read =  Macro_File.write( str(readMix)+'\n'+ Macro_read )
             with open ("MacroStore/"+self.args.Name+".txt",'r') as Macro_File : 
                        Macro_read =  Macro_File.read()           
             print(Macro_read)
@@ -77,7 +83,8 @@ class  Maker_Code:
          parser.add_argument( "-n","--Name"   ,help ="Name of the Macto output ")  
          parser.add_argument( "-r","--read"   ,help ="read the command from file ")
          parser.add_argument( "--hex",action='store_true',help ="generate the Macros in  hex format")   
-         parser.add_argument( "-H","--hidden",action='store_true',help ="hidden Macros in the Document you will cteate")    
+         parser.add_argument( "-H","--hidden",action='store_true',help ="hidden Macros in the Document you will cteate")   
+         parser.add_argument( "-M","--Mix",action='store_true',help ="Mix Macros with anther Macros")  
          self.args = parser.parse_args()        
          if len(sys.argv)!=1 :
             pass
