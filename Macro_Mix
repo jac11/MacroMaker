@@ -1,0 +1,59 @@
+Sub ClearFormatting()
+'
+' ClearFormatting Macro
+'
+
+'
+    ActiveCell.Range("A1:E1").Select
+    Selection.ClearFormats
+End Sub
+
+
+Sub HighlightNewOrdersForLoop()
+'
+' HighlightNewOrdersForLoop Macro
+'
+
+'
+For counter = 1 To 4
+    ActiveCell.Range("A1:E1").Select
+    Selection.Font.Bold = True
+    Selection.Font.Italic = True
+    Selection.Font.Underline = xlUnderlineStyleSingle
+    With Selection.Interior
+        .Pattern = xlSolid
+        .PatternColorIndex = xlAutomatic
+        .Color = 49407
+        .TintAndShade = 0
+        .PatternTintAndShade = 0
+    End With
+    ActiveCell.Offset(1, 0).Range("A1:E1").Select
+Next counter
+End Sub
+
+
+
+
+Sub HighlightNewOrdersForLoopWithInput()
+'
+' HighlightNewOrdersForLoop Macro
+'
+' This variation requires user input
+'
+UserInput = InputBox("Enter # of rows", "Rows to highlight")
+
+For counter = 1 To UserInput
+    ActiveCell.Range("A1:E1").Select
+    Selection.Font.Bold = True
+    Selection.Font.Italic = True
+    Selection.Font.Underline = xlUnderlineStyleSingle
+    With Selection.Interior
+        .Pattern = xlSolid
+        .PatternColorIndex = xlAutomatic
+        .Color = 49407
+        .TintAndShade = 0
+        .PatternTintAndShade = 0
+    End With
+    ActiveCell.Offset(1, 0).Range("A1:E1").Select
+Next counter
+End Sub
